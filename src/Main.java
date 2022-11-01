@@ -56,8 +56,8 @@ public class Main extends PApplet {
     }
 
     public void draw() {
-        resetValues();
         drawingBoard.update();
+        resetValues();
     }
 
     public void resetValues() {

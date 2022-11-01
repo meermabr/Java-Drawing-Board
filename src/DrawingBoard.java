@@ -3,7 +3,7 @@ public class DrawingBoard {
     private MouseInfo mouseInfo = new MouseInfo();
     private PaintingTool paint = new PaintingTool();
 
-    // TODO 2.1
+    // TODO 2.1 add variables for the last coordinates
     private int lastMouseX;
     private int lastMouseY;
 
@@ -51,11 +51,38 @@ public class DrawingBoard {
         // TODO 1.5 Use the center of the screen without using the actual coordinates
         // paint.drawLine(mouseInfo.getX(), mouseInfo.getY(), screen.getWidth() / 2, screen.getHeight() / 2);
 
-        // TODO 2.2
-        paint.drawLine(mouseInfo.getX(), mouseInfo.getY(), lastMouseX, lastMouseY);
+        // TODO 2.2 Use the current and last locations of the mouse to draw the lines
+        // paint.drawLine(mouseInfo.getX(), mouseInfo.getY(), lastMouseX, lastMouseY);
 
-        // TODO 2.3
-        lastMouseX = mouseInfo.getX();
-        lastMouseY = mouseInfo.getY();
+        // TODO 2.3 Update the last location values of the mouse
+        // lastMouseX = mouseInfo.getX();
+        // lastMouseY = mouseInfo.getY();
+
+        // TODO 3.1 Update lastMouseX and lastMouseY when the mouse is pressed
+        if (mouseInfo.isMousePressed()) {
+            lastMouseX = mouseInfo.getX();
+            lastMouseY = mouseInfo.getY();
+        }
+
+        // TODO 3.2 Restrict the drawing to only when the mouse is dragged
+        // if (mouseInfo.isMouseDragged()) {
+        //    paint.drawLine(mouseInfo.getX(), mouseInfo.getY(), lastMouseX, lastMouseY);
+        //    lastMouseX = mouseInfo.getX();
+        //    lastMouseY = mouseInfo.getY();
+        // }
+
+        // TODO 3.3 Restrict the drawing to only when the mouse is dragged and inside the border
+        if (mouseInfo.isMouseDragged() &&
+            mouseInfo.getX() >= 30 &&
+            mouseInfo.getX() <= 570 &&
+            mouseInfo.getY() >= 30 &&
+            mouseInfo.getY() <= 370) {
+
+            paint.drawLine(mouseInfo.getX(), mouseInfo.getY(), lastMouseX, lastMouseY);
+            lastMouseX = mouseInfo.getX();
+            lastMouseY = mouseInfo.getY();
+        }
+
+
     }
 }
