@@ -5,19 +5,20 @@ public class DrawingBoard {
 
     public void initialLaunch() {
         // 1.1 Change the background color
-        screen.setBackgroundColor(255, 255, 255);
+        screen.setBackgroundColor(Color.ORANGE);
 
         // 1.2 Identify the corners
-        paint.setFillColor(255, 0, 0);
+        paint.setFillColor(Color.RED);
         paint.drawCircle(0, 0, 20);
-        paint.setFillColor(0, 255, 0);
+        paint.setFillColor(Color.GREEN);
         paint.drawCircle(0, screen.getHeight(), 20);
-        paint.setFillColor(0, 0, 255);
+        paint.setFillColor(Color.BLUE);
         paint.drawCircle(screen.getWidth(), 0, 20);
-        paint.setFillColor(255, 255, 0);
+        paint.setFillColor(Color.MAGENTA);
         paint.drawCircle(screen.getWidth(), screen.getHeight(), 20);
 
-        // 1.3 Draw a frame
+        // 1.3 Draw an interior surface
+        paint.setFillColor(Color.WHITE);
         paint.drawRect(30, 30, screen.getWidth() - 60, screen.getHeight() - 60);
 
     }

@@ -14,6 +14,10 @@ public class PaintingTool {
         applet.strokeWeight(thickness);
     }
 
+    public void setLineColor(Color c) {
+        applet.stroke(c.getRed(), c.getGreen(), c.getBlue());
+    }
+
     public void setLineColor(int v1, int v2, int v3) {
         applet.stroke(v1, v2, v3);
     }
@@ -24,6 +28,10 @@ public class PaintingTool {
 
     public void drawCircle(int centerX, int centerY, int radius) {
         applet.circle(centerX, centerY, 2 * radius);
+    }
+
+    public void setFillColor(Color c) {
+        applet.fill(c.getRed(), c.getGreen(), c.getBlue());
     }
 
     public void setFillColor(int red, int green, int blue) {

@@ -9,6 +9,10 @@ public class Screen {
         return applet.height;
     }
 
+    public void setBackgroundColor(Color c) {
+        applet.background(c);
+    }
+
     public void setBackgroundColor(int red, int green, int blue) {
         applet.background(Color.RED);
     }
