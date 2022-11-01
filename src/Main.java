@@ -52,6 +52,7 @@ public class Main extends PApplet {
     }
 
     public void setup() {
+        colorMode(RGB, 255, 255, 255);
         drawingBoard.initialLaunch();
     }
 

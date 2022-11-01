@@ -12,10 +12,11 @@ public class DrawingBoard {
 
     // TODO 6
     private InteractiveButton clearButton = new ClearButton(5, 5, 20, Color.WHITE, this);
-    private PenColorButton colorButton1 = new PenColorButton(50, 5, 20, Color.RED);
-    private PenColorButton colorButton2 = new PenColorButton(70, 5, 20, Color.BLUE);
+//    private PenColorButton colorButton1 = new PenColorButton(50, 5, 20, Color.RED);
+//    private PenColorButton colorButton2 = new PenColorButton(70, 5, 20, Color.BLUE);
 
-
+    // TODO 7
+    private PenColorButton[] penColorButtons = new PenColorButton[24];
 
     public void initialLaunch() {
         // TODO 0.1 Change the background color
@@ -67,8 +68,18 @@ public class DrawingBoard {
         clearButton.drawSelf();
 
         // TODO 6
-        colorButton1.drawSelf();
-        colorButton2.drawSelf();
+//        colorButton1.drawSelf();
+//        colorButton2.drawSelf();
+
+        // TODO 7
+        int startX = screen.getWidth() / 2 - penColorButtons.length / 2 * 20;
+        penColorButtons[0] = new PenColorButton(startX, 5, 20, Color.BLACK);
+        penColorButtons[0].drawSelf();
+        for (int i = 1; i < penColorButtons.length; i++) {
+            float hue = 1f / penColorButtons.length * i;
+            penColorButtons[i] = new PenColorButton(i * 20 + startX, 5, 20, new Color(hue));
+            penColorButtons[i].drawSelf();
+        }
     }
 
     public void update() {
@@ -128,8 +139,13 @@ public class DrawingBoard {
         clearButton.update();
 
         // TODO 6
-        colorButton1.update();
-        colorButton2.update();
+//        colorButton1.update();
+//        colorButton2.update();
+
+        // TODO 7
+        for (PenColorButton button : penColorButtons) {
+            button.update();
+        }
     }
 
     // TODO 5

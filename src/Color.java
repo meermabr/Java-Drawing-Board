@@ -33,6 +33,13 @@ public class Color {
     this.blueValue = Math.max(0, Math.min(255, blue));;
   }
 
+  public Color(float hue) {
+    int rgb = java.awt.Color.HSBtoRGB(hue, 1, 1);
+    redValue = (rgb >> 16) & 0xFF;
+    greenValue = (rgb >> 8) & 0xFF;
+    blueValue = rgb & 0xFF;
+  }
+
   public Color(float hue, float saturation, float brightness) {
     float h = hue * 255;
     int rgb = java.awt.Color.HSBtoRGB(h, saturation, brightness);

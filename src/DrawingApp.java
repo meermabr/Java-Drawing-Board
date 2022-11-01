@@ -11,7 +11,7 @@ public class DrawingApp {
   private Color strokeColor;
   private Button[] colorButtons;
 
-  private final int NUM_COLORS = 16;
+  private final int NUM_COLORS = 24;
   
 
   public DrawingApp(Sketch applet) {
