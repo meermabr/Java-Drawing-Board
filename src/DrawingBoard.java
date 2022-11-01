@@ -24,9 +24,36 @@ public class DrawingBoard {
         paint.setFillColor(Color.MAGENTA);
         paint.drawCircle(600, 400, 20);
 
+        // TODO 4.1 Generate a few random circles
+        // int x = Generator.randomInt(600);
+        // int y = Generator.randomInt(400);
+        // int radius = Generator.randomInt(10, 30);
+        // int r = Generator.randomInt(255);
+        // int g = Generator.randomInt(255);
+        // int b = Generator.randomInt(255);
+        // paint.setFillColor(r, g, b);
+        // paint.drawCircle(x, y, radius);
+
+
+        // TODO 4.2 Generate many random circles
+        for (int circleNumber = 0; circleNumber < 500; circleNumber++) {
+            // This should be a random circle generator method...
+            int x = Generator.randomInt(600);
+            int y = Generator.randomInt(400);
+            int radius = Generator.randomInt(10, 30);
+            int r = Generator.randomInt(255);
+            int g = Generator.randomInt(255);
+            int b = Generator.randomInt(255);
+            paint.setFillColor(r, g, b);
+            paint.drawCircle(x, y, radius);
+        }
+
+
         // TODO 0.3 Draw an interior surface
         paint.setFillColor(Color.WHITE);
         paint.drawRect(30, 30, 540, 340);
+
+
 
     }
 
