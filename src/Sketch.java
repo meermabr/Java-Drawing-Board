@@ -11,7 +11,7 @@ public class Sketch extends PApplet {
 
   /** This method runs once, at the beginning of the sketch */
   public void setup() {
-    colorMode(HSB, 255);
+    //colorMode(HSB, 255);
     app = new DrawingApp(this);
     app.initialLaunch();
   }
@@ -57,7 +57,7 @@ public class Sketch extends PApplet {
   public void mouseDragged() {
     app.mouseDragged();
   }
-  
+
   public static void main(String[] args) {
     PApplet.main("Sketch");
   }

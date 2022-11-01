@@ -26,7 +26,7 @@ public class DrawingApp {
 
     colorButtons = new Button[NUM_COLORS];
     for (int i = 0; i < NUM_COLORS; i++) {
-      Color color = new Color(255/NUM_COLORS * i, 255, 255);
+      Color color = new Color(255.0f/NUM_COLORS * i, 1, 1);
       colorButtons[i] = new Button(this, 35 + i * 25, 2, 25, color);
     }
   }
