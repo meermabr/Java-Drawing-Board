@@ -7,6 +7,16 @@ public class DrawingBoard {
     private int lastMouseX;
     private int lastMouseY;
 
+    // TODO 5
+    // private InteractiveButton clearButton = new InteractiveButton(5, 5, 20, Color.WHITE, this);
+
+    // TODO 6
+    private InteractiveButton clearButton = new ClearButton(5, 5, 20, Color.WHITE, this);
+    private PenColorButton colorButton1 = new PenColorButton(50, 5, 20, Color.RED);
+    private PenColorButton colorButton2 = new PenColorButton(70, 5, 20, Color.BLUE);
+
+
+
     public void initialLaunch() {
         // TODO 0.1 Change the background color
         screen.setBackgroundColor(Color.ORANGE);
@@ -53,21 +63,25 @@ public class DrawingBoard {
         paint.setFillColor(Color.WHITE);
         paint.drawRect(30, 30, 540, 340);
 
+        // TODO 5
+        clearButton.drawSelf();
 
-
+        // TODO 6
+        colorButton1.drawSelf();
+        colorButton2.drawSelf();
     }
 
     public void update() {
-        // TODO 1.1 Draw a line anywhere
-        paint.setLineColor(Color.CYAN);
-        // paint.drawLine(0, 0, 600, 400);
-
-        // TODO 1.2 Generate random color values from 0 to 255 for red, green, and blue lines.
-        paint.setLineColor(
-                Generator.randomInt(255),
-                Generator.randomInt(255),
-                Generator.randomInt(255)
-        );
+//        // TODO 1.1 Draw a line anywhere
+//        paint.setLineColor(Color.CYAN);
+//        // paint.drawLine(0, 0, 600, 400);
+//
+//        // TODO 1.2 Generate random color values from 0 to 255 for red, green, and blue lines.
+//        paint.setLineColor(
+//                Generator.randomInt(255),
+//                Generator.randomInt(255),
+//                Generator.randomInt(255)
+//        );
 
         // TODO 1.3 Use the x and y coordinates of the mouse
         // paint.drawLine(mouseInfo.getX(), mouseInfo.getY(), 0, 0);
@@ -110,6 +124,17 @@ public class DrawingBoard {
             lastMouseY = mouseInfo.getY();
         }
 
+        // TODO 5
+        clearButton.update();
 
+        // TODO 6
+        colorButton1.update();
+        colorButton2.update();
+    }
+
+    // TODO 5
+    public void reset() {
+        paint.setFillColor(Color.WHITE);
+        paint.drawRect(30, 30, 540, 340);
     }
 }
